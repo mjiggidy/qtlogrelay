@@ -3,7 +3,7 @@ from PySide6 import QtCore
 
 class QtLogRelayHandler(logging.Handler):
 	"""
-	A python `logging` handler to emit a Qt signal when a new event is logged.
+	A python `logging` handler to emit a Qt signal when a new event is logged
 	"""
 
 	class _RelaySignals(QtCore.QObject):
