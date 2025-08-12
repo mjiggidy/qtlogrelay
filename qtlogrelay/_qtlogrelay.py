@@ -12,14 +12,11 @@ class QtLogRelayHandler(logging.Handler):
 		logEventReceived = QtCore.Signal(logging.LogRecord)
 		"""A new log record has been received"""
 
-		def __init__(self, parent=None):
-			super().__init__(parent=parent)
-
 
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
 
-		self._signals = self._RelaySignals(parent=self)
+		self._signals = self._RelaySignals()
 		self.logEventReceived = self._signals.logEventReceived
 		"""A new log record has been received"""
 	
