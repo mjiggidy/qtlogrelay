@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qtlogrelay"
+version = "0.1.0"
+description = "Thread-safe Python logging handler that relays log events to Qt signals."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Michael Jordan", email = "michael@glowingpixel.com" }
+]
+keywords = ["logging", "qt", "pyside6", "pyside", "pyqt", "signal", "thread-safe"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Framework :: PySide",
+    "Framework :: PyQt",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "PySide6>=6.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/mjiggidy/qtlogrelay"
+Repository = "https://github.com/mjiggidy/qtlogrelay"
+Issues = "https://github.com/mjiggidy/qtlogrelay/issues"
