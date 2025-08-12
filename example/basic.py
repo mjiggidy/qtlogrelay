@@ -30,11 +30,11 @@ class DemoWindow(QtWidgets.QWidget):
 		self.timer_clear_lbl.timeout.connect(self.lbl_lastevent.clear)
 		
 		# Add a `QtLogRelayHandler` to this module's logger
-		qtloghandler = QtLogRelayHandler()
-		logging.getLogger(__name__).addHandler(qtloghandler)
+		self.qtloghandler = QtLogRelayHandler()
+		logging.getLogger(__name__).addHandler(self.qtloghandler)
 
 		# Now we can connect to that handler's signal to show it in the label
-		qtloghandler.logEventReceived.connect(
+		self.qtloghandler.logEventReceived.connect(
 			self.showLoggedEventMessage,
 			QtCore.Qt.ConnectionType.QueuedConnection
 		)

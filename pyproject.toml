@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Thread-safe Python logging handler that relays log events to Qt signals."
 readme = "README.md"
 requires-python = ">=3.8"
-license = { text = "MIT" }
+license = { text = "GPL-3.0-or-later" }
 authors = [
     { name = "Michael Jordan", email = "michael@glowingpixel.com" }
 ]
@@ -17,7 +17,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Framework :: PySide",
     "Framework :: PyQt",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Operating System :: OS Independent",
 ]
 
