@@ -17,10 +17,7 @@ class DemoWindow(QtWidgets.QWidget):
 
 		# Create a QPushButton that emits a typical python `logging.LogRecord`
 		self.btn_log = QtWidgets.QPushButton("Do Me A Log")
-		self.btn_log.clicked.connect(
-			lambda: logging.getLogger(__name__).info("Button clicked"),
-			QtCore.Qt.ConnectionType.QueuedConnection
-		)
+		self.btn_log.clicked.connect(lambda: logging.getLogger(__name__).info("Button clicked"))
 		self.layout().addWidget(self.btn_log)
 		
 		# Create a label to show the latest log message
@@ -37,7 +34,10 @@ class DemoWindow(QtWidgets.QWidget):
 		logging.getLogger(__name__).addHandler(qtloghandler)
 
 		# Now we can connect to that handler's signal to show it in the label
-		qtloghandler.logEventReceived.connect(self.showLoggedEventMessage)
+		qtloghandler.logEventReceived.connect(
+			self.showLoggedEventMessage,
+			QtCore.Qt.ConnectionType.QueuedConnection
+		)
 
 	@QtCore.Slot(logging.LogRecord)
 	def showLoggedEventMessage(self, record:logging.LogRecord):
